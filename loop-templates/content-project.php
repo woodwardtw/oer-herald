@@ -46,6 +46,9 @@ defined( 'ABSPATH' ) || exit;
 		<div class="col-md-6">			
 			<?php herald_get_repeater ('Project Needs', 'project_needs', 'need');?>
 		</div>
+		<div class="col-md-6">
+			<?php herald_get_users();?>
+		</div>
 	</div>
 
 	<footer class="entry-footer">

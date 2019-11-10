@@ -58,3 +58,18 @@ function herald_get_repeater ($title, $top_field, $sub_field){
 
 	endif;
 }
+
+function herald_get_users(){
+	$users = get_field("members");
+	if( $users ){ 
+	echo '<h2>Members</h2>';
+	echo '<ul class="members-list">';
+	     foreach( $users as $user ){
+	        echo '<li>';
+	        echo '<img src="' . esc_attr(get_avatar_url($user->ID) ) . '" alt="author-avatar">';
+	        echo  '<a href="' . esc_attr($user->user_url) . '">' . $user->display_name . '</a>';
+	        echo '</li>';
+	    }
+	echo '</ul>';
+	}
+}

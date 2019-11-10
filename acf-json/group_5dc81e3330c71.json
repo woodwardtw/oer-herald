@@ -98,7 +98,7 @@
             "role": "",
             "allow_null": 0,
             "multiple": 1,
-            "return_format": "array"
+            "return_format": "object"
         }
     ],
     "location": [
@@ -118,5 +118,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1573397518
+    "modified": 1573397953
 }
