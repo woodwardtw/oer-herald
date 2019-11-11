@@ -59,10 +59,10 @@ function herald_get_repeater ($title, $top_field, $sub_field){
 	endif;
 }
 
-function herald_get_users(){
+function herald_get_users($title){
 	$users = get_field("members");
 	if( $users ){ 
-	echo '<h2>Members</h2>';
+	echo '<h2>' . $title . '</h2>';
 	echo '<ul class="members-list">';
 	     foreach( $users as $user ){
 	        echo '<li>';
@@ -73,3 +73,21 @@ function herald_get_users(){
 	echo '</ul>';
 	}
 }
+
+function license_badge(){
+	global $post;
+	$post_id = $post->ID;
+	$badge_state = get_field('license', $post_id);
+	if ($badge_state == 'attribution') {
+		echo '<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.';
+	} if ($badge_state == 'attribution-noncommercia') {
+		echo '<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.';
+	} if ($badge_state == 'attribution-sharealike'){
+		echo '<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.';
+	} if ($badge_state == 'attribution-noncommercial-sharealike') {
+		echo '<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.';
+	}
+
+
+}
+

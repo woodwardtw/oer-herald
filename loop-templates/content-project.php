@@ -25,11 +25,16 @@ defined( 'ABSPATH' ) || exit;
 
 	<div class="entry-content">
 		<div class="row">
-			<div class="col-md-6">
-				<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
-			</div>
-			<div class="col-md-6">
-				<?php the_content(); ?>
+			<?php if (has_post_thumbnail()) : ?>
+				<div class="col-md-6">
+					<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+				</div>
+				<div class="col-md-6">
+			<?php else:?>
+				<div class="col-md-12">	
+			<?php endif;?>			
+				<?php the_field('description')?>
+				<?php license_badge();?>
 			</div>	
 		</div>
 
@@ -46,13 +51,13 @@ defined( 'ABSPATH' ) || exit;
 	<!-- project extras -->
 	<div class="row">
 		<div class="col-md-6">			
-			<?php herald_get_repeater ('Project Goals', 'project_goals', 'goal');?>
+			<?php herald_get_repeater ('Student Learning Outcomes', 'student_learning_outcomes', 'learner_outcome');?>
 		</div>
 		<div class="col-md-6">			
-			<?php herald_get_repeater ('Project Needs', 'project_needs', 'need');?>
+			<?php herald_get_repeater ('Pre-requisites', 'pre-requisites', 'pre-requisite_item');?>
 		</div>
 		<div class="col-md-6">
-			<?php herald_get_users();?>
+			<?php herald_get_users('Builders');?>
 		</div>
 	</div>
 
