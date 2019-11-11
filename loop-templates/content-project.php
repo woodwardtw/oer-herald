@@ -16,17 +16,22 @@ defined( 'ABSPATH' ) || exit;
 
 		<div class="entry-meta">
 
-			<?php understrap_posted_on(); ?>
+			<?php //understrap_posted_on(); ?>
 
 		</div><!-- .entry-meta -->
 
 	</header><!-- .entry-header -->
 
-	<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
 
 	<div class="entry-content">
-
-		<?php the_content(); ?>
+		<div class="row">
+			<div class="col-md-6">
+				<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+			</div>
+			<div class="col-md-6">
+				<?php the_content(); ?>
+			</div>	
+		</div>
 
 		<?php
 		wp_link_pages(
