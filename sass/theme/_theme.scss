@@ -1,1 +1,13 @@
 // This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700i&display=swap');
+
+h1, h2, h3, h4, h5 {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 700;
+}
+
+p, li {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	font-size: 1.2em;
+}
