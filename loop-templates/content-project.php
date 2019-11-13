@@ -52,14 +52,18 @@ defined( 'ABSPATH' ) || exit;
 	</div><!-- .entry-content -->
 	<!-- project extras -->
 	<div class="row padded">
-		<div class="col-md-6">			
+		<div class="col-md-12">			
 			<?php herald_get_repeater ('Student Learning Outcomes', 'student_learning_outcomes', 'learner_outcome');?>
 		</div>
-		<div class="col-md-6">			
+
+		<div class="col-md-4">			
 			<?php herald_get_repeater ('Pre-requisites', 'pre-requisites', 'pre-requisite_item');?>
 		</div>
-		<div class="col-md-12">
-			<?php herald_get_repeater('Resources', 'resources', 'resource_needed');?>
+		<div class="col-md-4">
+			<?php herald_get_repeater('Resources Needed', 'resources', 'resource_needed');?>
+		</div>
+		<div class="col-md-4">
+			<?php herald_get_repeater('Student Characteristics', 'student_characteristics', 'student_characteristic');?>
 		</div>
 		<div class="col-md-6">
 			<?php herald_get_users('Builders');?>

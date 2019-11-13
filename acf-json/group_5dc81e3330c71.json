@@ -62,6 +62,46 @@
             ]
         },
         {
+            "key": "field_5dcb54ad35dbe",
+            "label": "Student Characteristics",
+            "name": "student_characteristics",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_5dcb54ad35dbf",
+                    "label": "Student Characteristic",
+                    "name": "student_characteristic",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                }
+            ]
+        },
+        {
             "key": "field_5dc9b367afb9b",
             "label": "Pre-requisites",
             "name": "pre-requisites",
@@ -243,5 +283,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1573524672
+    "modified": 1573606628
 }
