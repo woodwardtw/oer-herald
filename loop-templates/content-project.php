@@ -68,6 +68,10 @@ defined( 'ABSPATH' ) || exit;
 		<div class="col-md-6">
 			<?php herald_get_users('Builders');?>
 		</div>
+		<div class="col-md-12 share-row">
+			<a class="twitter-hashtag-button"  href="http://twitter.com/intent/tweet?url=<?php echo urlencode(get_permalink());?>&amp;text=<?php echo urlencode(get_the_title());?>&amp;button_hashtag=OERXIV&ref_src=twsrc%5Etfw">Share on Twitter</a>
+			<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>			
+		</div>
 
 	</div>
 
