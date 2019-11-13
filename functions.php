@@ -45,6 +45,9 @@ function my_allowed_block_types($allowed_blocks, $post) {
     }
 }
 
+
+
+//SOCIAL SHARING BUTTONS
 function herald_social_share($title, $url, $hashtag){
 	$safe_url = urlencode($url);
 	$safe_title = urlencode($title);
@@ -57,3 +60,14 @@ function herald_social_share($title, $url, $hashtag){
 	$facebook = '<div class="fb social"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u='.$safe_url.'%2F&amp;src=sdkpreparse">Share on Facebook</a></div>';
 	return $twitter . $linked_in . $facebook;
 }
+
+
+//ADD TO ARCHIVES & SEARCH
+
+function herald_add_custom_types( $query ) {
+    $query->set( 'post_type', array(
+     'post', 'nav_menu_item', 'project'
+        ));
+      return $query;
+}
+add_filter( 'pre_get_posts', 'herald_add_custom_types' );

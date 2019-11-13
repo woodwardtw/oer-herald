@@ -64,7 +64,10 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<ul>
 
 					<!-- The Loop -->
-					<?php if ( have_posts() ) : ?>
+					<?php 
+					   $args = array('post_type'=>'project');//add project cpt 
+					   query_posts($args);
+					 if ( have_posts() ) : ?>
 						<?php while ( have_posts() ) : the_post(); ?>
 							<li>
 								<?php
