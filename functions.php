@@ -44,3 +44,16 @@ function my_allowed_block_types($allowed_blocks, $post) {
      return array();
     }
 }
+
+function herald_social_share($title, $url, $hashtag){
+	$safe_url = urlencode($url);
+	$safe_title = urlencode($title);
+	$safe_hashtag = urlencode($hashtag);
+
+	$twitter = '<a class="twitter-hashtag-button"  href="http://twitter.com/intent/tweet?url='.$safe_url.'&amp;text='.$safe_title.'&amp;button_hashtag='.$safe_hashtag.'">Share on Twitter</a>';
+
+	$linked_in = '<a href="http://www.linkedin.com/sharing/share-offsite?url='.$safe_url.'&title='.$safe_title.'">Share on LinkedIn</a>';
+	//https://www.linkedin.com/sharing/share-offsite/?url=http%3A%2F%2Fdeveloper.linkedin.com
+
+	return $twitter . $linked_in;
+}
