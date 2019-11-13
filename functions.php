@@ -53,7 +53,7 @@ function herald_social_share($title, $url, $hashtag){
 	$twitter = '<div class="twitter social"><a class="twitter-hashtag-button"  href="http://twitter.com/intent/tweet?url='.$safe_url.'&amp;text='.$safe_title.'&amp;button_hashtag='.$safe_hashtag.'">Share on Twitter</a></div>';
 
 	$linked_in = '<div class="li social"><a href="http://www.linkedin.com/sharing/share-offsite?url='.$safe_url.'&title='.$safe_title.'">Share on LinkedIn</a></div>';
-	//https://www.linkedin.com/sharing/share-offsite/?url=http%3A%2F%2Fdeveloper.linkedin.com
 
-	return $twitter . $linked_in;
+	$facebook = '<div class="fb social"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u='.$safe_url.'%2F&amp;src=sdkpreparse">Share on Facebook</a></div>';
+	return $twitter . $linked_in . $facebook;
 }
