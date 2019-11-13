@@ -25,8 +25,8 @@ $understrap_includes = array(
 	'/editor.php',                          // Load Editor functions.
 	'/wp-admin.php',                        // /wp-admin/ related functions
 	'/deprecated.php',                      // Load deprecated functions.
-	'/custom-post-type.php',                      // Load custom post types
-	'/acf-details.php',                      // Load acf functions etc.
+	'/custom-post-type.php',                // Load custom post types
+	'/acf-details.php',                     // Load acf functions etc.
 );
 
 foreach ( $understrap_includes as $file ) {
@@ -35,4 +35,12 @@ foreach ( $understrap_includes as $file ) {
 		trigger_error( sprintf( 'Error locating /inc%s for inclusion', $file ), E_USER_ERROR );
 	}
 	require_once $filepath;
+}
+
+//remove block editor from projects from https://github.com/AdvancedCustomFields/acf/issues/112
+add_filter('allowed_block_types', 'my_allowed_block_types', 10, 2);
+function my_allowed_block_types($allowed_blocks, $post) {
+  if( $post->post_type === 'project' ) {
+     return array();
+    }
 }
