@@ -50,9 +50,9 @@ function herald_social_share($title, $url, $hashtag){
 	$safe_title = urlencode($title);
 	$safe_hashtag = urlencode($hashtag);
 
-	$twitter = '<a class="twitter-hashtag-button"  href="http://twitter.com/intent/tweet?url='.$safe_url.'&amp;text='.$safe_title.'&amp;button_hashtag='.$safe_hashtag.'">Share on Twitter</a>';
+	$twitter = '<div class="twitter social"><a class="twitter-hashtag-button"  href="http://twitter.com/intent/tweet?url='.$safe_url.'&amp;text='.$safe_title.'&amp;button_hashtag='.$safe_hashtag.'">Share on Twitter</a></div>';
 
-	$linked_in = '<a href="http://www.linkedin.com/sharing/share-offsite?url='.$safe_url.'&title='.$safe_title.'">Share on LinkedIn</a>';
+	$linked_in = '<div class="li social"><a href="http://www.linkedin.com/sharing/share-offsite?url='.$safe_url.'&title='.$safe_title.'">Share on LinkedIn</a></div>';
 	//https://www.linkedin.com/sharing/share-offsite/?url=http%3A%2F%2Fdeveloper.linkedin.com
 
 	return $twitter . $linked_in;
