@@ -34,7 +34,9 @@ defined( 'ABSPATH' ) || exit;
 				<div class="col-md-12">	
 			<?php endif;?>			
 				<?php the_field('description')?>
-				<?php license_badge();?>
+				<div class="cc-license">
+					<?php echo license_badge();?>
+				</div>
 			</div>	
 		</div>
 
@@ -49,16 +51,20 @@ defined( 'ABSPATH' ) || exit;
 
 	</div><!-- .entry-content -->
 	<!-- project extras -->
-	<div class="row">
+	<div class="row padded">
 		<div class="col-md-6">			
 			<?php herald_get_repeater ('Student Learning Outcomes', 'student_learning_outcomes', 'learner_outcome');?>
 		</div>
 		<div class="col-md-6">			
 			<?php herald_get_repeater ('Pre-requisites', 'pre-requisites', 'pre-requisite_item');?>
 		</div>
+		<div class="col-md-12">
+			<?php herald_get_repeater('Resources', 'resources', 'resource_needed');?>
+		</div>
 		<div class="col-md-6">
 			<?php herald_get_users('Builders');?>
 		</div>
+
 	</div>
 
 	<footer class="entry-footer">
