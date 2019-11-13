@@ -66,7 +66,7 @@ defined( 'ABSPATH' ) || exit;
 			<?php herald_get_repeater('Student Characteristics', 'student_characteristics', 'student_characteristic');?>
 		</div>
 		<div class="col-md-6">
-			<?php herald_get_users('Builders');?>
+			<?php herald_get_users('Team Members');?>
 		</div>
 		<div class="col-md-12 share-row">
 			<?php echo herald_social_share(get_the_title(), get_the_permalink(), 'OERXIV');?>

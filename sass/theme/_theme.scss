@@ -12,10 +12,33 @@ p, li {
 	font-size: 1.2em;
 }
 
+/*Team members layout*/
+ul.members-list, .members-list li {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.members-list li {
+	display: inline-block;
+	margin: 10px 10px 10px 0;
+}
+
+.author-link {
+	display: block;
+	text-align: center;
+}
+
+
 /*SOCIAL SHARING BUTTONS*/
 
-.social {
-	display: inline-block;
+.share-row {
+	display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.social {	
 	width: 100px;
 	height: 100px;
 	border: 1px solid;
