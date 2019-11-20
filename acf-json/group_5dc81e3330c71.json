@@ -1,6 +1,6 @@
 {
     "key": "group_5dc81e3330c71",
-    "title": "Project",
+    "title": "Project Data",
     "fields": [
         {
             "key": "field_5dc9b3233fa25",
@@ -38,7 +38,7 @@
             "min": 0,
             "max": 0,
             "layout": "table",
-            "button_label": "",
+            "button_label": "Add Outcome",
             "sub_fields": [
                 {
                     "key": "field_5dc9af39d875d",
@@ -78,7 +78,7 @@
             "min": 0,
             "max": 0,
             "layout": "table",
-            "button_label": "",
+            "button_label": "Add Characteristic",
             "sub_fields": [
                 {
                     "key": "field_5dcb54ad35dbf",
@@ -118,7 +118,7 @@
             "min": 0,
             "max": 0,
             "layout": "table",
-            "button_label": "",
+            "button_label": "Add Pre-requisite",
             "sub_fields": [
                 {
                     "key": "field_5dc9b3a4afb9c",
@@ -185,12 +185,12 @@
                 "In Person": "In Person",
                 "Hybrid": "Hybrid"
             },
-            "allow_custom": 0,
+            "allow_custom": 1,
+            "save_custom": 1,
             "default_value": [],
             "layout": "vertical",
             "toggle": 0,
-            "return_format": "value",
-            "save_custom": 0
+            "return_format": "value"
         },
         {
             "key": "field_5dc9b4c671454",
@@ -209,7 +209,7 @@
             "min": 0,
             "max": 0,
             "layout": "table",
-            "button_label": "",
+            "button_label": "Add Resource",
             "sub_fields": [
                 {
                     "key": "field_5dc9b4d271455",
@@ -234,7 +234,7 @@
         },
         {
             "key": "field_5dc8236c0c7ce",
-            "label": "Members",
+            "label": "Team Members",
             "name": "members",
             "type": "user",
             "instructions": "",
@@ -283,5 +283,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1573606628
+    "modified": 1574255659
 }

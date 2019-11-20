@@ -63,11 +63,22 @@ function herald_social_share($title, $url, $hashtag){
 
 
 //ADD TO ARCHIVES & SEARCH
+//from https://thomasgriffin.io/how-to-include-custom-post-types-in-wordpress-search-results/
 
-function herald_add_custom_types( $query ) {
-    $query->set( 'post_type', array(
-     'post', 'nav_menu_item', 'project'
-        ));
-      return $query;
+add_filter( 'pre_get_posts', 'herald_cpt_search' );
+/**
+ * This function modifies the main WordPress query to include an array of 
+ * post types instead of the default 'post' post type.
+ *
+ * @param object $query  The original query.
+ * @return object $query The amended query.
+ */
+function herald_cpt_search( $query ) {
+	
+    if ( $query->is_search ) {
+	$query->set( 'post_type', array( 'post', 'project' ) );
+    }
+    
+    return $query;
+    
 }
-add_filter( 'pre_get_posts', 'herald_add_custom_types' );
