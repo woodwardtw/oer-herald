@@ -31,3 +31,10 @@ if ( ! function_exists( 'understrap_scripts' ) ) {
 } // endif function_exists( 'understrap_scripts' ).
 
 add_action( 'wp_enqueue_scripts', 'understrap_scripts' );
+
+function herald_admin_theme_style()
+{
+  wp_enqueue_style( 'admin-theme', get_stylesheet_directory_uri() . '/css/herald-wp-admin.css' );
+}
+add_action('admin_enqueue_scripts', 'herald_admin_theme_style');
+add_action('login_enqueue_scripts', 'herald_admin_theme_style');
