@@ -55,16 +55,15 @@ defined( 'ABSPATH' ) || exit;
 		<div class="col-md-12">			
 			<?php herald_get_repeater ('Student Learning Outcomes', 'student_learning_outcomes', 'learner_outcome');?>
 		</div>
-
 		<div class="col-md-4">			
 			<?php herald_get_repeater ('Pre-requisites', 'pre-requisites', 'pre-requisite_item');?>
 		</div>
 		<div class="col-md-4">
-			<?php herald_get_repeater('Resources Needed', 'resources', 'resource_needed');?>
-		</div>
-		<div class="col-md-4">
 			<?php herald_get_repeater('Student Characteristics', 'student_characteristics', 'student_characteristic');?>
 		</div>
+		<div class="col-md-4">
+			<?php herald_get_repeater('Resources Needed', 'resources', 'resource_needed');?>
+		</div>		
 		<div class="col-md-6">
 			<?php herald_get_users('Team Members');?>
 		</div>

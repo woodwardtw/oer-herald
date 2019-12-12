@@ -142,6 +142,25 @@
             ]
         },
         {
+            "key": "field_5df24bfdd2a3e",
+            "label": "External Criteria",
+            "name": "external_criteria",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
             "key": "field_5dc9b7ee2f81a",
             "label": "License",
             "name": "license",
@@ -194,7 +213,7 @@
         },
         {
             "key": "field_5dc9b4c671454",
-            "label": "Resources",
+            "label": "Needed Resources",
             "name": "resources",
             "type": "repeater",
             "instructions": "",
@@ -249,6 +268,25 @@
             "allow_null": 0,
             "multiple": 1,
             "return_format": "object"
+        },
+        {
+            "key": "field_5df24deffc1ca",
+            "label": "Logistical Details",
+            "name": "logistical_details",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
         }
     ],
     "location": [
@@ -283,5 +321,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1574255659
+    "modified": 1576160814
 }

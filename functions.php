@@ -82,3 +82,46 @@ function herald_cpt_search( $query ) {
     return $query;
     
 }
+
+
+//CLEANSING THE DASHBOARD
+function posts_for_current_author($query) {
+    global $pagenow;
+ 
+    if( 'edit.php' != $pagenow || !$query->is_admin )
+        return $query;
+ 
+    if( !current_user_can( 'manage_options' ) ) {
+        global $user_ID;
+        $query->set('author', $user_ID );
+    }
+    return $query;
+}
+add_filter('pre_get_posts', 'posts_for_current_author');
+
+function remove_admin_menu_items() {
+if( current_user_can( 'manage_options' ) ) { }
+    else {  
+  $remove_menu_items = array(__('Media'),__('Posts'),__('Tools'),__('Contact'), __('Comments'));
+  global $menu;
+  end ($menu);
+  while (prev($menu)){
+    $item = explode(' ',$menu[key($menu)][0]);
+    if(in_array($item[0] != NULL?$item[0]:"" , $remove_menu_items)){
+      unset($menu[key($menu)]);
+    }
+  }
+}
+}
+add_action('admin_menu', 'remove_admin_menu_items');
+ 
+function remove_menus(){
+if( current_user_can( 'manage_options' ) ) { }
+    else {      
+  remove_menu_page( 'index.php' );                  //Dashboard
+  remove_menu_page( 'jetpack' );                    //Jetpack* 
+  remove_menu_page( 'options-general.php' );        //Settings
+  remove_menu_page( 'vc-welcome' );        //Settings
+}
+}
+add_action( 'admin_menu', 'remove_menus', 999 );
