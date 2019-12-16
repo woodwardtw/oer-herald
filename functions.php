@@ -48,17 +48,24 @@ function my_allowed_block_types($allowed_blocks, $post) {
 
 
 //SOCIAL SHARING BUTTONS
-function herald_social_share($title, $url, $hashtag){
+function herald_social_share($title, $url, $hashtag){	
+	global $post;
 	$safe_url = urlencode($url);
 	$safe_title = urlencode($title);
 	$safe_hashtag = urlencode($hashtag);
+	$email =  get_the_author_meta( 'user_email', $post->post_author);
 
 	$twitter = '<div class="twitter social"><a class="twitter-hashtag-button"  href="http://twitter.com/intent/tweet?url='.$safe_url.'&amp;text='.$safe_title.'&amp;button_hashtag='.$safe_hashtag.'">Share on Twitter</a></div>';
 
 	$linked_in = '<div class="li social"><a href="http://www.linkedin.com/sharing/share-offsite?url='.$safe_url.'&title='.$safe_title.'">Share on LinkedIn</a></div>';
 
 	$facebook = '<div class="fb social"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u='.$safe_url.'%2F&amp;src=sdkpreparse">Share on Facebook</a></div>';
-	return $twitter . $linked_in . $facebook;
+	
+	$email = '<div class="email social"><a href="mailto:'.$email.'?subject=Interest in the OER Project- '.$title.'">Email Your Interest</a></div>';
+	//<a href="mailto:someone@yoursite.com?subject=Mail from Our Site">Email Us</a>  
+
+
+	return $twitter . $linked_in . $facebook . $email;	
 }
 
 
